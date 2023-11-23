@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>ajouter un auteur</title>
+{% endblock %}
+
+{% block body %}
+  <h2>ajout d'un auteur</h2>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+  <form method="post" action="/auteur/add" >
+    <fieldset>
+        <legend> Créer un auteur</legend>
+        <label for="nomAuteur">nom de l'auteur</label><br>
+        <input id="nomAuteur" type="text" name="nomAuteur" size="18" value="" placeholder="Saisir le nom de l'auteur"><br>
+        <input type="submit" value="Creer" name="Valider" >
+    </fieldset>
+  </form>
+{% endblock %}

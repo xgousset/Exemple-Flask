@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>modifier un article</title>
+{% endblock %}
+
+{% block body %}
+  <h2>modifier un article</h2>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+  <form method="post" action="/article/edit">
+    <fieldset>
+        <legend> Modifier un article</legend>
+        <input type="hidden" name="id" size="18" value="{{ article.id }}" id="id">
+        <label for="nom">nom</label><br>
+        <input type="text" name="nom" size="18" value="{{ article.nom }}" id="nom"><br>
+
+        <label>type</label><br>
+
+
+<select name="type_article_id" required>
+    {% for type in types_articles %}
+    <option value="{{ type.id }}"
+            {% if article.type_article_id is defined and type.id ==  article.type_article_id %}selected{% endif %}
+    > {{ type.libelle }} </option>
+    {% endfor %}
+</select>
+        <br>
+        <label for="prix">prix</label><br>
+        <input id="prix" type="text" name="prix" size="18" value="{{article.prix}}" placeholder="Saisir le prix de l'article" required><br>
+        <label for="stock">stock</label><br>
+        <input id="stock" type="text" name="stock" size="18" value="{{article.stock}}" placeholder="Saisir le stock de l'article" required><br>
+        <label for="desc">description</label><br>
+        <input id="desc" type="text" name="desc" size="18" value="{{article.description}}" placeholder="Saisir la description de l'article"><br>
+         <label for="img">image</label><br>
+        <input id="img" type="text" name="img" size="18" value="{{article.image}}" placeholder="Saisir le nom de l'image de l'article"><br>
+        <input type="submit" value="Modifier" name="Modifier" >
+    </fieldset>
+  </form>
+{% endblock %}

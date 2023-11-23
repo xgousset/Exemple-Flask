@@ -1,0 +1,58 @@
+body{
+    margin: 30px;
+}
+table ,tr {
+    position: relative;
+    bottom: 0px;
+  table-layout: auto;
+  width: 80%;
+    height: 40px;
+  border-collapse: collapse;
+  border: 1px solid purple;
+  background-color: lightgray;
+}
+
+a {
+    width:150px;
+    height: 30px;
+    background-color:lightgray;
+    border: 1px green groove ;
+    text-align:center;
+    vertical-align: middle;
+    padding: 5px;
+    margin : 5px;
+    border-radius: 15px;
+}
+
+
+.flashes {
+    padding: 5px;
+    margin : 5px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.alert-warning {
+    background-color: rgba(255, 197, 197, 1);
+
+}
+.alert-success {
+    background-color: #bdfdbd;
+}
+
+form{
+    margin-left: 20px;
+}
+title{
+    margin-left: 60px;
+}
+ h2{
+     margin-left: 40px;
+ }
+ h1{
+     margin-left: 60px;
+ }
+ h3{
+     margin-left: 80px;
+ }
